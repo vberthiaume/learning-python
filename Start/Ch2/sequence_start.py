@@ -1,15 +1,11 @@
-# LinkedIn Learning Python course by Joe Marini
-# Example file for complex types
-
 # Sequences: Lists and Tuples
-# These are -- surprise -- sequences of values
 myList = [0, 1, "two", 3.2, False]
-# print (myList)
-# print (len(myList))
+print (myList)
+print (len(myList))
 
 # to access a member of a sequence type, use [], and this can include negative numbers, which start from the end of the list
-# print (myList[0])    # print the first item
-# print (myList[-1])   # print the last item
+print (myList[0])    # print the first item
+print (myList[-1])   # print the last item
 
 myStr = "this is a string"
 print (myStr[2])
@@ -24,7 +20,6 @@ print (myList[::2])   # these are all optional lol, default values are 0, -1, an
 
 # you can use slices to reverse a sequence, by setting -1 as the step lol (also works with strings)
 print (myList[::-1])
-
 
 # Tuples are like lists, but they are immutable (just like strings)
 # because they are immutable, they are a bit more efficient
