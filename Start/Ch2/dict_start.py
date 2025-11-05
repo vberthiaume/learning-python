@@ -1,7 +1,3 @@
-# LinkedIn Learning Python course by Joe Marini
-# Example file for complex types
-
-
 # Dictionary: a key-value data structure
 myDict = {
     "one" : 1,
