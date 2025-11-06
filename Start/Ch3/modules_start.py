@@ -22,3 +22,4 @@ data = [
 ]
 
 # Create a formatted table
+print (tabulate(data, headers="firstrow", tablefmt="fancy_grid"))
