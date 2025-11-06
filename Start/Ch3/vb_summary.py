@@ -2,11 +2,7 @@
 for i in range (5,15,2):
     print(i)
 
-# you can build formated strings with the f prefix
-greeting = "Hello!"
-count = 10
-print(f"{greeting} you are bro number {count}")
-
+#=================== classes =========================
 # base class
 class Vehicle:
     def __init__(self, bodystyle):  # this is the constructor
@@ -28,3 +24,38 @@ class Car(Vehicle):
 car1 = Car("gas")
 car2 = Car("electric")
 car2.drive(32)
+
+#=================== exceptions =========================
+
+try:
+    answer = int(input ("What should I divide 10 by? "))
+    print(10/answer)
+except ZeroDivisionError as e:
+    print ("can't divide by 0 bro")
+except ValueError as e:
+    print ("you didn't give me a number bro")
+except:
+    print("some other exception bro")
+finally:
+    print("finally done with this bro")
+
+#=================== palindrome test =========================
+
+def is_palindrome(teststr):
+    # remove all spaces and special characters
+    teststr = ''.join(e for e in teststr if e.isalnum())
+
+    # make it lowercase
+    teststr = teststr.lower()
+
+    # needs to be an even-lenght string
+    if len(teststr) % 2 == 0:
+        return False
+
+    for i, c in enumerate(teststr):
+        if c != teststr[-(i+1)]:
+            return False
+
+    return True
+
+print(is_palindrome("Madam, I'm Adam."))
