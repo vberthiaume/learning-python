@@ -1,15 +1,35 @@
-# LinkedIn Learning Python course by Joe Marini
-# write files using the built-in Python file methods
-#
+#Create a file and write to it
+# the list of possible arguments for w+ here is the same as in the fopen c function: https://stackoverflow.com/questions/1466000/difference-between-modes-a-a-w-w-and-r-in-built-in-open-function
+'''
+ ``r''   Open text file for reading.  The stream is positioned at the
+         beginning of the file.
 
+ ``r+''  Open for reading and writing.  The stream is positioned at the
+         beginning of the file.
 
-# Open a file for writing and create it if it doesn't exist
+ ``w''   Truncate file to zero length or create text file for writing.
+         The stream is positioned at the beginning of the file.
 
+ ``w+''  Open for reading and writing.  The file is created if it does not
+         exist, otherwise it is truncated.  The stream is positioned at
+         the beginning of the file.
 
-# Open the file for appending text to the end
+ ``a''   Open for writing.  The file is created if it does not exist.  The
+         stream is positioned at the end of the file.  Subsequent writes
+         to the file will always end up at the then current end of file,
+         irrespective of any intervening fseek(3) or similar.
 
+ ``a+''  Open for reading and writing.  The file is created if it does not
+         exist.  The stream is positioned at the end of the file.  Subse-
+         quent writes to the file will always end up at the then current
+         end of file, irrespective of any intervening fseek(3) or similar.
+'''
+sample_file = open("text.txt", "w+")
+sample_file.write("brooooooo")
+sample_file.close()
 
-# write some lines of data to the file
+# Now re-open that file and append to it
+sample_file = open("text.txt", "a+")
+sample_file.write("braaaa")
+sample_file.close()
 
-
-# close the file when done
