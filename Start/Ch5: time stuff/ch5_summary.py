@@ -34,26 +34,46 @@ if diff.days < 0: diff += timedelta(days=365)
 print ("only", diff.days, "days until april fools")
 
 # =================== USING CALENDAR ===================
-NOW HERE
-
 import calendar
 
-# create a plain text calendar
-
+c = calendar.TextCalendar(calendar.SUNDAY)  #arg is what day to start the cal
+thestr = c.formatmonth (2026, 10)
+print(thestr)
 
 # create an HTML formatted calendar
-
+hc = calendar.HTMLCalendar(calendar.MONDAY)
+thestr = hc.formatmonth (2026, 10)
+print(thestr)
 
 # loop over the days of a month
 # zeroes mean that the day of the week is in an overlapping month
-
+for i in c.itermonthdays(2026,calendar.APRIL):
+    print (i)
   
 # The Calendar module provides useful utilities for the given locale,
 # such as the names of days and months in both full and abbreviated forms
+for name in calendar.month_name:
+    print (name)
 
+for name in calendar.day_name:
+    print (name)
 
 # Calculate days based on a rule: For example, consider
 # a team meeting on the first Friday of every month.
 # To figure out what days that would be for each month,
 # we can use this script:
+for m in range(1,13):
+    cal = calendar.monthcalendar(2026, m)
+    week1 = cal[0]
+    week2 = cal[1]
+    meetday = week1[calendar.FRIDAY] if week1[calendar.FRIDAY] != 0 else week2[calendar.FRIDAY]
 
+    print(f"the meeting will be on {calendar.month_name[m]} {meetday}")
+
+# test: count the number of instances of a particular weekday in a given month/year
+def count_days(year, month, whichday):
+    cal = calendar.monthcalendar(year, month)
+    result = 0
+    for week in cal:
+        result += 1 if week[whichday] != 0 else 0
+    return result
